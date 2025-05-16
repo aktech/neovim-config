@@ -5,8 +5,9 @@
 ---@type ChadrcConfig
 local M = {}
 
+vim.o.sessionoptions="blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
 M.base46 = {
-	theme = "onedark",
+	theme = "catppuccin",
 
 	-- hl_override = {
 	-- 	Comment = { italic = true },
