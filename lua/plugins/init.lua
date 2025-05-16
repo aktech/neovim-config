@@ -29,6 +29,14 @@ return {
     'mrcjkb/rustaceanvim',
     version = '^6', -- Recommended
     lazy = false, -- This plugin is already lazy
-  }
+  },
+
+  {
+    'github/copilot.vim',
+    lazy = false,
+    config = function ()
+      vim.cmd("Copilot setup")
+    end,
+  },
 
 }
