@@ -5,10 +5,11 @@ local servers = { "html", "cssls", "pyright", "rust-analyzer", "ts_ls", "ruff"}
 vim.lsp.config('ruff', {
   init_options = {
     settings = {
-      -- Ruff language server settings go here
-      args = {
-        '--ignore=I001'
-      },
+      lint = {
+        -- Ignores all isort rules (I001, I002, etc.)
+        -- https://docs.astral.sh/ruff/editors/settings/#ignore
+        ignore = {"I"}
+      }
     }
   }
 })
