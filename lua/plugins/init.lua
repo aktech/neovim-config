@@ -206,4 +206,5 @@ return {
       }
     end,
  },
+ require("plugins.configs.dadbod"),
 }
