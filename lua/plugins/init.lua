@@ -52,6 +52,43 @@ return {
   },
 
   {
+    "mistweaverco/kulala.nvim",
+  },
+
+  {
+  "nvim-treesitter/nvim-treesitter",
+  dependencies = {
+    "nvim-treesitter/nvim-treesitter-textobjects",
+  },
+  config = function()
+    require("nvim-treesitter.configs").setup({
+      ensure_installed = { "lua", "javascript", "python", "html", "css" },
+      incremental_selection = {
+        enable = true,
+        keymaps = {
+          init_selection = "<CR>",        -- Enter key to start
+          node_incremental = "<CR>",      -- Enter to expand
+          node_decremental = "<BS>",      -- Backspace to shrink
+          scope_incremental = "<Tab>",    -- Tab for scope
+        },
+      },
+      textobjects = {
+        select = {
+          enable = true,
+          lookahead = true,
+          keymaps = {
+            ["af"] = "@function.outer",
+            ["if"] = "@function.inner",
+            ["ac"] = "@class.outer",
+            ["ic"] = "@class.inner",
+          },
+        },
+      },
+    })
+  end,
+  },
+
+  {
   "yetone/avante.nvim",
   event = "VeryLazy",
   version = false, -- Never set this value to "*"! Never!
