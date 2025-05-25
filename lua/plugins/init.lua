@@ -207,4 +207,5 @@ return {
     end,
  },
  require("plugins.configs.dadbod"),
+ require("plugins.configs.refactoring"),
 }
