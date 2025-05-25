@@ -15,13 +15,6 @@ wk.add({
   { "<leader>kh", "<cmd>Lspsaga hover_doc<CR>", desc = "Hover Doc" },
   { "<leader>kr", "<cmd>Lspsaga finder<CR>", desc = "Find references" },
 })
-
--- map("n", "gp", "<cmd>Lspsaga peek_definition<CR>", { desc = "Peek Definition" })
--- map("n", "gd", "<cmd>Lspsaga goto_definition<CR>", { desc = "Go to Definition" })
--- map("n", "gh", "<cmd>Lspsaga hover_doc<CR>", { desc = "Hover Doc" })
--- map("n", "gr", "<cmd>Lspsaga finder<CR>", { desc = "Find references" })
--- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
-
 local function visual_cursors_with_delay()
   -- Execute the vm-visual-cursors command.
   vim.cmd('silent! execute "normal! \\<Plug>(VM-Visual-Cursors)"')
