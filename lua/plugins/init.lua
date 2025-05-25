@@ -66,10 +66,10 @@ return {
       incremental_selection = {
         enable = true,
         keymaps = {
-          init_selection = "<CR>",        -- Enter key to start
-          node_incremental = "<CR>",      -- Enter to expand
-          node_decremental = "<BS>",      -- Backspace to shrink
-          scope_incremental = "<Tab>",    -- Tab for scope
+          init_selection = "<M-Up>",        -- Option + Up to start
+          node_incremental = "<M-Up>",      -- Option + Up to expand
+          node_decremental = "<M-Down>",    -- Option + Down to shrink
+          scope_incremental = "<Tab>",      -- Keep Tab for scope
         },
       },
       textobjects = {
