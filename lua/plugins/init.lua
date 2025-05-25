@@ -192,5 +192,34 @@ return {
     statuscolumn = { enabled = true },
     words = { enabled = true },
   },
- }
+ },
+
+ {
+   {
+      "mg979/vim-visual-multi",
+      branch = "master",
+      event = "VeryLazy",
+      init = function()
+        -- Disable all default mappings
+        vim.g.VM_default_mappings = 0
+        -- Only keep the essential mappings
+        vim.g.VM_maps = {
+          ["Add Cursor Down"] = "<M-Down>",    -- Alt/Option + Down
+          ["Add Cursor Up"] = "<M-Up>",        -- Alt/Option + Up
+          ["Switch Mode"] = "<Tab>",           -- Tab to switch between cursor/extend mode
+        }
+      end,
+      config = function()
+        -- Custom keybinding: Press Alt twice to enter multi-cursor mode
+        vim.keymap.set('n', '<M-M>', function()
+          -- Start VM mode and add cursor down
+          vim.cmd('call vm#commands#add_cursor_down(1, v:count1)')
+        end, { desc = "Start multi-cursor mode" })
+        -- Alternative: Just use Alt+Down/Up directly without double-press
+        -- This is simpler and more intuitive
+        vim.keymap.set('n', '<M-Down>', '<Plug>(VM-Add-Cursor-Down)', { desc = "Add cursor down" })
+        vim.keymap.set('n', '<M-Up>', '<Plug>(VM-Add-Cursor-Up)', { desc = "Add cursor up" })
+      end,
+   }
+ },
 }
