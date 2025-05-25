@@ -27,10 +27,10 @@ end
 wk.add(
   {
     { "<leader>m", group = "Visual Multi" },
-    { "<leader>ma", "<Plug>(VM-Select-All)<Tab>", desc = "Select All" },
-    { "<leader>mo", "<Plug>(VM-Toggle-Mappings)", desc = "Toggle Mapping" },
-    { "<leader>mp", "<Plug>(VM-Add-Cursor-At-Pos)", desc = "Add Cursor At Pos" },
-    { "<leader>mr", "<Plug>(VM-Start-Regex-Search)", desc = "Start Regex Search" },
+    { "<leader>ma", "<Plug>(VM-Select-All)<Tab>", desc = "Select All", mode = "n" },
+    { "<leader>mo", "<Plug>(VM-Toggle-Mappings)", desc = "Toggle Mapping", mode = "n" },
+    { "<leader>mp", "<Plug>(VM-Add-Cursor-At-Pos)", desc = "Add Cursor At Pos", mode = "n" },
+    { "<leader>mr", "<Plug>(VM-Start-Regex-Search)", desc = "Start Regex Search", mode = "n" },
     { "<leader>mv", visual_cursors_with_delay, desc = "Visual Cursors", mode = "v" },
   }
 )
