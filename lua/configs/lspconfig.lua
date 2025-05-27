@@ -1,6 +1,9 @@
 require("nvchad.configs.lspconfig").defaults()
 
-local servers = { "html", "cssls", "pyright", "rust-analyzer", "ts_ls", "ruff", "bashls", "jsonls", "lua_ls" }
+local servers = {
+  "html", "cssls", "pyright", "rust-analyzer", "ts_ls", "ruff", "bashls", "jsonls", "lua_ls", "terraform_lsp",
+  "yamlls", "dockerls", "gopls", "clangd", "sqls", "docker_compose_language_service", "graphql", "tailwindcss",
+}
 
 vim.lsp.config('ruff', {
   init_options = {
