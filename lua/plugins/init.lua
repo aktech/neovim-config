@@ -20,18 +20,11 @@ return {
   },
 
   {
-    'github/copilot.vim',
-    lazy = false,
-    config = function ()
-      vim.cmd("Copilot setup")
-    end,
-  },
-
-  {
     "mistweaverco/kulala.nvim",
   },
 
  require("plugins.configs.auto-session"),
+ require("plugins.configs.copilot"),
  require("plugins.configs.lspsaga"),
  require("plugins.configs.vim-visual-multi"),
  require("plugins.configs.nvim-treesitter"),

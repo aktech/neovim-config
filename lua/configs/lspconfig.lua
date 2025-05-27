@@ -17,22 +17,38 @@ vim.lsp.config('ruff', {
   }
 })
 
-vim.lsp.config('pyright', {
+vim.lsp.config('pylsp', {
   settings = {
-    pyright = {
-      -- Using Ruff's import organizer
-      disableOrganizeImports = true,
-    },
-    python = {
-      analysis = {
-        -- Ignore all files for analysis to exclusively use Ruff for linting
-        ignore = { '*' },
-        -- Disable since very inefficient
-        -- diagnosticMode = "workspace",
-      },
-    },
-  },
+    pylsp = {
+      plugins = {
+          pyflakes = { enabled = false },
+          pycodestyle = { enabled = false },
+          autopep8 = { enabled = false },
+          yapf = { enabled = false },
+          mccabe = { enabled = false },
+          pylsp_mypy = { enabled = false },
+          pylsp_black = { enabled = false },
+          pylsp_isort = { enabled = false },
+      }
+    }
+  }
 })
+-- vim.lsp.config('pyright', {
+--   settings = {
+--     pyright = {
+--       -- Using Ruff's import organizer
+--       disableOrganizeImports = true,
+--     },
+--     python = {
+--       analysis = {
+--         -- Ignore all files for analysis to exclusively use Ruff for linting
+--         ignore = { '*' },
+--         -- Disable since very inefficient
+--         -- diagnosticMode = "workspace",
+--       },
+--     },
+--   },
+-- })
 
 vim.lsp.enable(servers)
 

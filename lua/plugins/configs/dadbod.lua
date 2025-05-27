@@ -1,7 +1,8 @@
 return {
   "tpope/vim-dadbod",
   dependencies = {
-      "kristijanhusak/vim-dadbod-completion",
+      -- causes conflict with auto completion and its not required
+      -- "kristijanhusak/vim-dadbod-completion",
       "kristijanhusak/vim-dadbod-ui",
   },
   lazy = false,
