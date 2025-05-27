@@ -74,3 +74,15 @@ vim.api.nvim_create_autocmd("WinEnter", {
     vim.cmd('silent! checktime')
   end
 })
+
+-- This is to ensure that copilot suggestions are loaded with code completion suggestions
+-- so that both works with tab completion without conflicts.
+local cmp = require("cmp")
+cmp.setup({
+  sources = {
+    { name = "copilot",  group_index = 2 }, -- 🚀
+    { name = "nvim_lsp", group_index = 2 },
+    { name = "luasnip",  group_index = 2 },
+    { name = "path",     group_index = 2 },
+  },
+})

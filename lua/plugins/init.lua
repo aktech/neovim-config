@@ -23,6 +23,10 @@ return {
     "mistweaverco/kulala.nvim",
   },
 
+  {
+    "hrsh7th/nvim-cmp",
+  },
+
  require("plugins.configs.auto-session"),
  require("plugins.configs.copilot"),
  require("plugins.configs.lspsaga"),
