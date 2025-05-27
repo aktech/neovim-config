@@ -67,3 +67,9 @@ wk.add(
     },
   }
 )
+
+-- Debug statement mapping
+wk.add({
+  { "<leader>d", group = "Debug" },
+  { "<leader>db", "oimport ipdb; ipdb.set_trace()<Esc>", desc = "Add ipdb breakpoint", mode = "n" },
+})
