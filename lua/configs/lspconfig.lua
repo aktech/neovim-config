@@ -27,7 +27,8 @@ vim.lsp.config('pyright', {
       analysis = {
         -- Ignore all files for analysis to exclusively use Ruff for linting
         ignore = { '*' },
-        diagnosticMode = "workspace",
+        -- Disable since very inefficient
+        -- diagnosticMode = "workspace",
       },
     },
   },
