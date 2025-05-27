@@ -13,19 +13,6 @@ return {
     end,
   },
 
-
-  {
-    'rmagatti/auto-session',
-    lazy = false,
-
-    ---enables autocomplete for opts
-    ---@module "auto-session"
-    ---@type AutoSession.Config
-    opts = {
-      suppressed_dirs = { '~/', '~/Projects', '~/Downloads', '/' },
-    }
-  },
-
   {
     'mrcjkb/rustaceanvim',
     version = '^6', -- Recommended
@@ -44,6 +31,7 @@ return {
     "mistweaverco/kulala.nvim",
   },
 
+ require("plugins.configs.auto-session"),
  require("plugins.configs.lspsaga"),
  require("plugins.configs.vim-visual-multi"),
  require("plugins.configs.nvim-treesitter"),
