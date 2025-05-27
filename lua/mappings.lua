@@ -34,3 +34,36 @@ wk.add(
     { "<leader>mv", visual_cursors_with_delay, desc = "Visual Cursors", mode = "v" },
   }
 )
+
+wk.add(
+  {
+    { "<leader>l", group = "Lazy Git" },
+    { "<leader>lg", function() Snacks.lazygit() end, desc = "Lazy Git", mode = "n" },
+    { "<leader>lf", function() Snacks.lazygit.log_file() end, desc = "File History", mode = "n" },
+    { "<leader>ll", function() Snacks.lazygit.log() end, desc = "Git Log", mode = "n" },
+    { "<leader>lb", function()
+        local file = vim.fn.expand("%")
+        Snacks.terminal({"git", "blame", file}, {
+          title = "Git Blame: " .. vim.fn.fnamemodify(file, ":t"),
+          size = { width = 0.8, height = 0.8 }
+        })
+      end, desc = "Git Blame", mode = "n"
+    },
+    { "<leader>lB", function()
+        local file = vim.fn.expand("%")
+        local line = vim.fn.line(".")
+        Snacks.terminal({"git", "blame", "-L", line .. "," .. line, file}, {
+          title = "Git Blame Line " .. line,
+          size = { width = 0.9, height = 0.6 }
+        })
+      end, desc = "Blame Current Line", mode = "n"
+    },
+    { "<leader>lt", function()
+        Snacks.terminal("git status", {
+          title = "Git Status",
+          size = { width = 0.7, height = 0.7 }
+        })
+      end, desc = "Git Status", mode = "n"
+    },
+  }
+)
