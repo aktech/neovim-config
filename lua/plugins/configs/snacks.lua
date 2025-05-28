@@ -46,6 +46,11 @@ return   {
       enabled = true,
       configure = true,
     },
+    scratch = {
+      win = {
+        style = "split",
+      },
+    }
   },
   config = function(_, opts)
     require("snacks").setup(opts)

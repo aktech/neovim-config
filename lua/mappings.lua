@@ -73,3 +73,12 @@ wk.add({
   { "<leader>d", group = "Debug" },
   { "<leader>db", "oimport ipdb; ipdb.set_trace()<Esc>", desc = "Add ipdb breakpoint", mode = "n" },
 })
+
+wk.add({
+    { "<leader>.",  function() Snacks.scratch({win = false, ft = "markdown"}) end, desc = "Toggle Scratch Buffer" },
+    { "<leader>S",  function() Snacks.scratch.select() end, desc = "Select Scratch Buffer" },
+})
+
+wk.add({
+    { "<leader>,",  function() require('conform').format() end, desc = "Format file" },
+})
