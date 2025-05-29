@@ -27,12 +27,12 @@ return {
     "hrsh7th/nvim-cmp",
   },
 
-  {
-    "m4xshen/hardtime.nvim",
-    lazy = false,
-    dependencies = { "MunifTanjim/nui.nvim" },
-    opts = {},
-  },
+  -- {
+  --   "m4xshen/hardtime.nvim",
+  --   lazy = false,
+  --   dependencies = { "MunifTanjim/nui.nvim" },
+  --   opts = {},
+  -- },
 
   require "plugins.configs.auto-session",
   require "plugins.configs.copilot",
