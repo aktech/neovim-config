@@ -3,7 +3,8 @@ local options = {
     lua = { "stylua" },
     css = { "prettier" },
     html = { "prettier" },
-    json = {"jq"},
+    json = { "jq" },
+    python = { "black" },
   },
 
   -- format_on_save = {
