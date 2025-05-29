@@ -33,12 +33,14 @@ return {
     config = true,
     lazy = false,
   },
-  -- {
-  --   "m4xshen/hardtime.nvim",
-  --   lazy = false,
-  --   dependencies = { "MunifTanjim/nui.nvim" },
-  --   opts = {},
-  -- },
+
+  {
+    "m4xshen/hardtime.nvim",
+    lazy = false,
+    dependencies = { "MunifTanjim/nui.nvim" },
+    opts = {},
+    enabled = false,
+  },
 
   require "plugins.configs.auto-session",
   require "plugins.configs.copilot",
