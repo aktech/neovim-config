@@ -27,6 +27,12 @@ return {
     "hrsh7th/nvim-cmp",
   },
 
+  {
+    "akinsho/toggleterm.nvim",
+    version = "*",
+    config = true,
+    lazy = false,
+  },
   -- {
   --   "m4xshen/hardtime.nvim",
   --   lazy = false,
