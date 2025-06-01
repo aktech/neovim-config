@@ -82,3 +82,18 @@ wk.add({
 wk.add({
     { "<leader>,",  function() require('conform').format() end, desc = "Format file" },
 })
+
+-- Terminal mappings
+wk.add({
+  { "<leader>t", group = "Terminal" },
+  { "<leader>tt", "<cmd>ToggleTerm<cr>", desc = "Toggle terminal" },
+  { "<leader>tf", "<cmd>ToggleTerm direction=float<cr>", desc = "Toggle floating terminal" },
+  { "<leader>th", "<cmd>ToggleTerm direction=horizontal<cr>", desc = "Toggle horizontal terminal" },
+  { "<leader>tv", "<cmd>ToggleTerm direction=vertical<cr>", desc = "Toggle vertical terminal" },
+  { "<leader>ta", "<cmd>ToggleTermToggleAll<cr>", desc = "Toggle all terminals" },
+  { "<leader>ts", "<cmd>TermSelect<cr>", desc = "Select terminal" },
+})
+
+wk.add({
+    { "<leader>h",  function() require('nvchad.themes').open() end, desc = "telescope nvchad themes" },
+  })
