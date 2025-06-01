@@ -7,7 +7,7 @@ local M = {}
 
 vim.o.sessionoptions="blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
 M.base46 = {
-	theme = "catppuccin",
+	theme = "onedark",
 
 	-- hl_override = {
 	-- 	Comment = { italic = true },

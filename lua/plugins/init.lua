@@ -42,6 +42,16 @@ return {
     enabled = false,
   },
 
+  {
+    "olimorris/codecompanion.nvim",
+    opts = {},
+    lazy = false,
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+    },
+  },
+
   require "plugins.configs.auto-session",
   require "plugins.configs.copilot",
   require "plugins.configs.lspsaga",
