@@ -2,7 +2,11 @@ return {
   "folke/noice.nvim",
   event = "VeryLazy",
   opts = {
-    -- add any options here
+      lsp = {
+      signature = {
+        enabled = false, -- This disables signature help completely, annoying things that pops up on pressing space inside functions
+      },
+    },
   },
   dependencies = {
     -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
