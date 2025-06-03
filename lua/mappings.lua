@@ -97,3 +97,7 @@ wk.add({
 wk.add({
     { "<leader>h",  function() require('nvchad.themes').open() end, desc = "telescope nvchad themes" },
 })
+
+wk.add({
+    { "<leader>e",  function() Snacks.explorer() end, desc = "Toggle Explorer" },
+})
