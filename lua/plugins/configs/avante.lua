@@ -14,7 +14,7 @@ return {
           temperature = 0,
           max_tokens = 8192, -- Increase this to include reasoning tokens (for reasoning models)
         }, -- any extra request body you want to send
-        -- timeout = 30000, -- Timeout in milliseconds, increase this for reasoning models
+       -- timeout = 30000, -- Timeout in milliseconds, increase this for reasoning models
         --reasoning_effort = "medium", -- low|medium|high, only used for reasoning models
       },
     },

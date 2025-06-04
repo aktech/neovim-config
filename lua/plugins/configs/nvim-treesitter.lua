@@ -38,6 +38,12 @@ return {
     vim.api.nvim_set_hl(0, "@string.documentation", {
       fg = "#808080", -- Gray color for docstrings
       italic = true, -- Make docstrings italic
+      -- underline = false,
+      force = true,
     })
+    -- ❷ make comments inherit from it
+    vim.api.nvim_set_hl(0, "@comment", { link = "@string.documentation" })
+    -- (optional, for files still using Vim-regex syntax)
+    vim.api.nvim_set_hl(0, "Comment", { link = "@string.documentation" })
   end,
 }
