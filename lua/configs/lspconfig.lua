@@ -13,7 +13,8 @@ vim.lsp.config('ruff', {
         -- Ignores all isort rules (I001, I002, etc.)
         -- https://docs.astral.sh/ruff/editors/settings/#ignore
         -- missing-blank-line-after-summary (D205)
-        ignore = {"I", "D205"}
+        -- missing-trailing-comma (COM812)
+        ignore = {"I", "D205", "COM812"}
       }
     }
   }
