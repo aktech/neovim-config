@@ -14,7 +14,8 @@ vim.lsp.config('ruff', {
         -- https://docs.astral.sh/ruff/editors/settings/#ignore
         -- missing-blank-line-after-summary (D205)
         -- missing-trailing-comma (COM812)
-        ignore = {"I", "D205", "COM812"}
+        -- unnecessary-multiline-docstring (D200)
+        ignore = {"I", "D205", "COM812", "D200"}
       }
     }
   }
