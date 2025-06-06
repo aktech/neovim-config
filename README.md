@@ -11,6 +11,12 @@ npm -g install @microsoft/compose-language-service
 go install github.com/docker/docker-language-server/cmd/docker-language-server@latest
 ```
 
+### Ubuntu
+
+```
+sudo apt install lazygit
+```
+
 ## Installation
 
 Clone this repository and run nvim
