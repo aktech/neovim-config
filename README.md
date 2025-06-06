@@ -18,3 +18,11 @@ Clone this repository and run nvim
 ```
 git clone git@github.com:aktech/neovim-config.git ~/.config/nvim/
 ```
+
+## Notes
+
+If rust-analyzer doesn't work:
+
+```
+rustup component add rust-analyzer
+```
