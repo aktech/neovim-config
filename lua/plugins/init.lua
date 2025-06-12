@@ -52,6 +52,11 @@ return {
     },
   },
 
+  {
+    "tpope/vim-fugitive",
+    lazy = false, -- or true, if you want to lazy load on a specific event
+  },
+
   require "plugins.configs.auto-session",
   require "plugins.configs.copilot",
   require "plugins.configs.lspsaga",

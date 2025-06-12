@@ -41,14 +41,7 @@ wk.add(
     { "<leader>lg", function() Snacks.lazygit() end, desc = "Lazy Git", mode = "n" },
     { "<leader>lf", function() Snacks.lazygit.log_file() end, desc = "File History", mode = "n" },
     { "<leader>ll", function() Snacks.lazygit.log() end, desc = "Git Log", mode = "n" },
-    { "<leader>lb", function()
-        local file = vim.fn.expand("%")
-        Snacks.terminal({"git", "blame", file}, {
-          title = "Git Blame: " .. vim.fn.fnamemodify(file, ":t"),
-          size = { width = 0.8, height = 0.8 }
-        })
-      end, desc = "Git Blame", mode = "n"
-    },
+    { "<leader>lb", "<cmd>Git blame<cr>", desc = "Git Blame" },
     { "<leader>lB", function()
         local file = vim.fn.expand("%")
         local line = vim.fn.line(".")
