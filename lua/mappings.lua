@@ -94,3 +94,7 @@ wk.add({
 wk.add({
     { "<leader>e",  function() Snacks.explorer() end, desc = "Toggle Explorer" },
 })
+
+wk.add({
+    { "<leader>rp", function() vim.cmd('normal! ggVG"+p') end, desc = "Replace buffer with clipboard" },
+})
