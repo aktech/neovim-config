@@ -8,7 +8,10 @@ local M = {}
 vim.o.sessionoptions="blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
 M.base46 = {
 	theme = "catppuccin",
-
+  hl_override = {
+    CursorLine = { bg = "#414559" },  -- bluish-gray, soft but visible
+    Visual = { bg = "#414559" },  -- bluish-gray, soft but visible
+  }
 	-- hl_override = {
 	-- 	Comment = { italic = true },
 	-- 	["@comment"] = { italic = true },
