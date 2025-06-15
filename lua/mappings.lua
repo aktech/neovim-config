@@ -10,12 +10,13 @@ map("i", "jk", "<ESC>")
 -- Lspsaga keymappings
 wk.add({
   { "<leader>k", group = "Lspsaga" }, -- group
-  { "<leader>kp", "<cmd>Lspsaga peek_definition<CR>", desc = "Peek Definition" },
-  { "<leader>kd", "<cmd>Lspsaga goto_definition<CR>", desc = "Go to Definition" },
-  { "<leader>kh", "<cmd>Lspsaga hover_doc<CR>", desc = "Hover Doc" },
-  { "<leader>kr", "<cmd>Lspsaga finder<CR>", desc = "Find references" },
-  { "<leader>kn", "<cmd>Lspsaga rename<CR>", desc = "Rename" },
-  { "<leader>kc", "<cmd>Lspsaga code_action<CR>", desc = "Code Actions" },
+  { "<leader>kp", "<cmd>Lspsaga peek_definition<CR>", desc = "LSP Peek Definition" },
+  { "<leader>kd", "<cmd>Lspsaga goto_definition<CR>", desc = "LSP Go to Definition" },
+  { "<leader>kh", "<cmd>Lspsaga hover_doc<CR>", desc = "LSP Hover Doc" },
+  { "<leader>kr", "<cmd>Lspsaga finder<CR>", desc = "LSP Find references" },
+  { "<leader>kn", "<cmd>Lspsaga rename<CR>", desc = "LSP Rename" },
+  { "<leader>kc", "<cmd>Lspsaga code_action<CR>", desc = "LSP Code Actions" },
+  { "<leader>ko", "<cmd>Lspsaga outline<CR>", desc = "LSP outline" },
 })
 local function visual_cursors_with_delay()
   -- Execute the vm-visual-cursors command.
