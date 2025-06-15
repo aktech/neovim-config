@@ -34,6 +34,7 @@ vim.lsp.config('pylsp', {
           pylsp_mypy = { enabled = false },
           pylsp_black = { enabled = false },
           pylsp_isort = { enabled = false },
+          rope_autoimport = { enabled = true },
       }
     }
   }

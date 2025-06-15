@@ -14,6 +14,8 @@ wk.add({
   { "<leader>kd", "<cmd>Lspsaga goto_definition<CR>", desc = "Go to Definition" },
   { "<leader>kh", "<cmd>Lspsaga hover_doc<CR>", desc = "Hover Doc" },
   { "<leader>kr", "<cmd>Lspsaga finder<CR>", desc = "Find references" },
+  { "<leader>kn", "<cmd>Lspsaga rename<CR>", desc = "Rename" },
+  { "<leader>kc", "<cmd>Lspsaga code_action<CR>", desc = "Code Actions" },
 })
 local function visual_cursors_with_delay()
   -- Execute the vm-visual-cursors command.
