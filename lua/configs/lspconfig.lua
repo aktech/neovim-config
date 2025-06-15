@@ -3,7 +3,7 @@ require("nvchad.configs.lspconfig").defaults()
 local servers = {
   "html", "cssls", "pylsp", "rust-analyzer", "ts_ls", "ruff", "bashls", "jsonls", "lua_ls", "terraform_lsp",
   "yamlls", "dockerls", "gopls", "clangd", "sqls", "docker_compose_language_service", "graphql", "tailwindcss",
-  "ansiblels"
+  "ansiblels", "pyrefly"
 }
 
 vim.lsp.config('ruff', {
@@ -38,6 +38,12 @@ vim.lsp.config('pylsp', {
       }
     }
   }
+})
+
+vim.lsp.config('pyrefly', {
+  cmd = { 'pyrefly', 'lsp' },
+  filetypes = { 'python' },
+  single_file_support = true,
 })
 -- vim.lsp.config('pyright', {
 --   settings = {
