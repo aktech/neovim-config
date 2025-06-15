@@ -55,7 +55,7 @@ vim.lsp.config('pylsp', {
 --     },
 --   },
 -- })
-
+-- vim.lsp.set_log_level("debug")
 vim.lsp.enable(servers)
 
 -- read :h vim.lsp.config for changing options of lsp servers 

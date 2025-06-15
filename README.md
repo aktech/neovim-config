@@ -32,3 +32,6 @@ If rust-analyzer doesn't work:
 ```
 rustup component add rust-analyzer
 ```
+
+If pylsp doesn't work:
+- Make sure to uninstall pylsp from Mason, so that the pylsp is used from the conda environment
