@@ -105,3 +105,34 @@ wk.add({
 wk.add({
     { "<leader>fk", "<cmd>Telescope keymaps<cr>", desc = "Find keymaps" },
 })
+
+wk.add({
+  -- Single mapping
+  { "<leader>X", "<cmd>%bdelete<cr>", desc = "Close all buffers" },
+  -- Group with prefix
+  { "<leader>b", group = "Buffer" },
+  { "<leader>bx", "<cmd>%bdelete<cr>", desc = "Close all buffers" },
+   { "<leader>bc", function()
+    local current = vim.api.nvim_get_current_buf()
+    local buffers = vim.api.nvim_list_bufs()
+
+    for _, buf in ipairs(buffers) do
+      if buf ~= current and vim.api.nvim_buf_is_loaded(buf) then
+        local buftype = vim.api.nvim_buf_get_option(buf, 'buftype')
+        local filetype = vim.api.nvim_buf_get_option(buf, 'filetype')
+
+        -- Skip special buffers (file tree, terminals, etc.)
+        if buftype == '' and filetype ~= 'NvimTree' and filetype ~= 'neo-tree' then
+          vim.api.nvim_buf_delete(buf, { force = false })
+        end
+      end
+    end
+  end, desc = "Close all buffers but current" },
+  { "<leader>bn", "<cmd>bnext<cr>", desc = "Next buffer" },
+  { "<leader>bp", "<cmd>bprevious<cr>", desc = "Previous buffer" },
+})
+
+wk.add({
+  { "<leader>cw", group = "Clean Whitespace" },
+  { "<leader>cwt", "<cmd>%s/\\s\\+$//g<cr>", desc = "Remove trailing whitespace" },
+})
