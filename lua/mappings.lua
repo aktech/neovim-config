@@ -100,3 +100,7 @@ wk.add({
 wk.add({
     { "<leader>rp", function() vim.cmd('normal! ggVG"+p') end, desc = "Replace buffer with clipboard" },
 })
+
+wk.add({
+    { "<leader>fk", "<cmd>Telescope keymaps<cr>", desc = "Find keymaps" },
+})
