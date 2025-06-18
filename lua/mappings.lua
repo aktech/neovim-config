@@ -132,6 +132,18 @@ wk.add({
   { "<leader>bp", "<cmd>bprevious<cr>", desc = "Previous buffer" },
 })
 
+
+wk.add({
+  { "<leader>bfp",
+    function()
+      local filepath = vim.api.nvim_buf_get_name(0)
+      vim.fn.setreg('+', filepath)
+      print('Copied: ' .. filepath)
+    end,
+    desc = "Copy current buffer file path"
+  }
+})
+
 wk.add({
   { "<leader>cw", group = "Clean Whitespace" },
   { "<leader>cwt", "<cmd>%s/\\s\\+$//g<cr>", desc = "Remove trailing whitespace" },
