@@ -148,3 +148,9 @@ wk.add({
   { "<leader>cw", group = "Clean Whitespace" },
   { "<leader>cwt", "<cmd>%s/\\s\\+$//g<cr>", desc = "Remove trailing whitespace" },
 })
+
+-- Navigation shortcuts
+wk.add({
+  { "B", "^", desc = "Go to start of line", mode = "n" },
+  { "E", "$", desc = "Go to end of line", mode = "n" },
+})
