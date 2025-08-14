@@ -26,10 +26,9 @@ jobs:
       run: luarocks install luacheck
 
     - name: Install stylua
-      uses: JohnnyMorganz/stylua-action@v4
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        version: latest
+      run: |
+        wget -qO- https://github.com/JohnnyMorganz/StyLua/releases/latest/download/stylua-linux.zip | sudo unzip -d /usr/local/bin -
+        sudo chmod +x /usr/local/bin/stylua
 
     - name: Run luacheck
       run: |
