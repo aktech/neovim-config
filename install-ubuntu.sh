@@ -43,13 +43,11 @@ sudo apt install -y \
 # Install Neovim (latest stable)
 echo "📝 Installing Neovim..."
 if ! command -v nvim &> /dev/null; then
-    # Download and install latest Neovim AppImage
-    wget -O /tmp/nvim.appimage https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
-    chmod +x /tmp/nvim.appimage
-    sudo mv /tmp/nvim.appimage /usr/local/bin/nvim
-
-    # Alternative: Install via snap if AppImage doesn't work
-    # sudo snap install nvim --classic
+    # Download and install Neovim v0.11.2
+    wget -O /tmp/nvim-linux-x86_64.tar.gz https://github.com/neovim/neovim/releases/download/v0.11.2/nvim-linux-x86_64.tar.gz
+    sudo tar -xzf /tmp/nvim-linux-x86_64.tar.gz -C /opt/
+    sudo ln -s /opt/nvim-linux-x86_64/bin/nvim /usr/local/bin/nvim
+    rm /tmp/nvim-linux-x86_64.tar.gz
 fi
 
 # Install language servers and tools via npm
