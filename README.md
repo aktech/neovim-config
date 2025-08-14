@@ -1,5 +1,7 @@
 # Neovim configuration
 
+[![Build and Test Neovim Configuration](https://github.com/aktech/neovim-config/actions/workflows/build.yml/badge.svg)](https://github.com/aktech/neovim-config/actions/workflows/build.yml) [![Lint Lua Code](https://github.com/aktech/neovim-config/actions/workflows/lint.yml/badge.svg)](https://github.com/aktech/neovim-config/actions/workflows/lint.yml)
+
 ## Requirements
 
 ```bash
