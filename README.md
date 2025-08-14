@@ -8,6 +8,21 @@
 
 </div>
 
+## 📸 Screenshots
+
+<div align="center">
+
+### Python Development
+![Python](screenshots/python.png)
+
+### Rust Development
+![Rust](screenshots/rust.png)
+
+### Lua Configuration
+![Lua](screenshots/lua.png)
+
+</div>
+
 ## 🛠️ Installation
 
 ### Ubuntu/Debian
