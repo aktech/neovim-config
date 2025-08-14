@@ -1,0 +1,87 @@
+name: Test Install Script
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'install-ubuntu.sh'
+      - '.github/workflows/test-install.yml'
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'install-ubuntu.sh'
+      - '.github/workflows/test-install.yml'
+
+jobs:
+  test-install:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Make install script executable
+      run: chmod +x install-ubuntu.sh
+
+    - name: Test install script (dry run)
+      run: |
+        # Test script syntax
+        bash -n install-ubuntu.sh
+        echo "✅ Script syntax is valid"
+
+    - name: Run install script
+      run: |
+        # Run the actual installation
+        ./install-ubuntu.sh
+
+    - name: Verify Neovim installation
+      run: |
+        # Check if Neovim was installed
+        if command -v nvim &> /dev/null; then
+          echo "✅ Neovim installed successfully"
+          nvim --version
+        else
+          echo "❌ Neovim not found"
+          exit 1
+        fi
+
+    - name: Verify configuration
+      run: |
+        # Check if config directory exists
+        if [ -d ~/.config/nvim ]; then
+          echo "✅ Neovim configuration directory exists"
+          ls -la ~/.config/nvim/
+        else
+          echo "❌ Neovim configuration not found"
+          exit 1
+        fi
+
+        # Check for key config files
+        for file in init.lua lua/chadrc.lua; do
+          if [ -f ~/.config/nvim/$file ]; then
+            echo "✅ $file exists"
+          else
+            echo "❌ $file missing"
+            exit 1
+          fi
+        done
+
+    - name: Test Neovim startup
+      run: |
+        # Test if Neovim can start without errors
+        timeout 30s nvim --headless -c 'lua print("Configuration loaded successfully")' -c 'qa!' || {
+          echo "❌ Neovim startup failed or timed out"
+          exit 1
+        }
+        echo "✅ Neovim starts successfully"
+
+    - name: Verify language servers
+      run: |
+        # Check if Go tools were installed
+        if [ -d ~/go/bin ]; then
+          echo "✅ Go tools directory exists"
+          ls -la ~/go/bin/ || true
+        fi
+
+        # Check if Node.js tools were installed
+        npm list -g --depth=0 | grep -E "(compose-language-service|bash-language-server)" || true
