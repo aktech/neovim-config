@@ -27,8 +27,10 @@ jobs:
 
     - name: Install stylua
       run: |
-        wget -qO- https://github.com/JohnnyMorganz/StyLua/releases/latest/download/stylua-linux.zip | sudo unzip -d /usr/local/bin -
+        wget -O stylua.zip https://github.com/JohnnyMorganz/StyLua/releases/latest/download/stylua-linux.zip
+        sudo unzip -d /usr/local/bin stylua.zip
         sudo chmod +x /usr/local/bin/stylua
+        rm stylua.zip
 
     - name: Run luacheck
       run: |
