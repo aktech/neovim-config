@@ -5,6 +5,7 @@ local options = {
     html = { "prettier" },
     json = { "jq" },
     python = { "ruff_format" },
+    go = { "goimports", "gofmt" },
   },
 
   -- format_on_save = {
