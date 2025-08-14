@@ -67,11 +67,8 @@ go install github.com/docker/docker-language-server/cmd/docker-language-server@l
 go install golang.org/x/tools/gopls@latest
 
 # Install Python tools
-echo "🐍 Installing Python tools..."
-pip3 install --user \
-    pyrefly \
-    ruff \
-    python-lsp-server[all]
+echo "🐍 Note: Install Python tools in your Python environment:"
+echo "   pip install pyrefly ruff python-lsp-server[all]"
 
 # Install Rust and rust-analyzer (if not already installed)
 echo "🦀 Installing Rust and rust-analyzer..."
