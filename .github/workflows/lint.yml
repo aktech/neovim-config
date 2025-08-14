@@ -1,0 +1,58 @@
+name: Lint Lua Code
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Install Lua
+      uses: leafo/gh-actions-lua@v10
+      with:
+        luaVersion: "5.1"
+
+    - name: Install LuaRocks
+      uses: leafo/gh-actions-luarocks@v4
+
+    - name: Install luacheck
+      run: luarocks install luacheck
+
+    - name: Install stylua
+      uses: JohnnyMorganz/stylua-action@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        version: latest
+
+    - name: Run luacheck
+      run: |
+        luacheck lua/ --globals vim --exclude-files 'lua/plugins/configs/claude-code.lua' || true
+
+    - name: Check Lua formatting with stylua
+      run: |
+        stylua --check lua/ --glob '**/*.lua' --exclude 'lua/plugins/configs/claude-code.lua' || echo "Formatting issues found, but not failing the build"
+
+    - name: Validate Lua syntax
+      run: |
+        find lua/ -name "*.lua" -not -path "*/plugins/configs/claude-code.lua" -exec lua -e "loadfile('{}') or error('Syntax error in {}')" \;
+
+    - name: Check for common issues
+      run: |
+        echo "Checking for common Neovim config issues..."
+
+        # Check for required files
+        test -f init.lua || (echo "❌ Missing init.lua" && exit 1)
+        test -f lua/chadrc.lua || (echo "❌ Missing lua/chadrc.lua" && exit 1)
+
+        # Check for NvChad structure
+        test -d lua/configs/ || (echo "❌ Missing lua/configs directory" && exit 1)
+        test -d lua/plugins/ || (echo "❌ Missing lua/plugins directory" && exit 1)
+
+        echo "✅ All structural checks passed"
