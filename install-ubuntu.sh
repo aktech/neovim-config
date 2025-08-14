@@ -106,7 +106,7 @@ fi
 # Clone this configuration
 echo "📥 Cloning Neovim configuration..."
 mkdir -p ~/.config
-git clone https://github.com/aktech/nvim ~/.config/nvim
+git clone https://github.com/aktech/neovim-config.git ~/.config/nvim
 
 # Set up PATH for Go binaries
 echo "🔧 Setting up PATH..."
