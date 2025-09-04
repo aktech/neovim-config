@@ -76,3 +76,6 @@ rustup component add rust-analyzer
 :Mason
 ```
 
+**Neovim exiting in tmux:**
+
+See this: https://github.com/tmux/tmux/issues/3983#issuecomment-2126483615
